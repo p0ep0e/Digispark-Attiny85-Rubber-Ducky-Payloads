@@ -1,0 +1,39 @@
+// Important the DigiKeyboard library to allow the board to mimic a keyboard
+#include "DigiKeyboard.h"
+
+void setup() 
+{
+     // Nothing to initialise
+}
+
+void loop() 
+{
+    // Calling the sendKeyStroke(0) to flush any inflight keystrokes
+    DigiKeyboard.sendKeyStroke(0);
+
+    DigiKeyboard.delay(500);    // Wait half a second (500ms)
+
+    DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);  //Windows Key + R to open run dialog box
+    DigiKeyboard.delay(500);    // Wait half a second (500ms)
+    DigiKeyboard.print("mspaint");    // run Microsoft Paint
+    DigiKeyboard.sendKeyStroke(KEY_ENTER);
+    DigiKeyboard.delay(2000);    // Wait half 2 seconds (2000ms)
+    DigiKeyboard.sendKeyStroke(KEY_F, MOD_ALT_LEFT); //ALT + F to open file menu
+    DigiKeyboard.delay(50);    // Wait 20th of a second (50ms)
+    DigiKeyboard.sendKeyStroke(KEY_O); //O for Open
+    DigiKeyboard.print("https://bobmckay.com/downloads/thehoff.jpg");  // download thehoff.jpg file
+    DigiKeyboard.sendKeyStroke(KEY_ENTER);
+    DigiKeyboard.delay(2000);    // Wait half 2 seconds (2000ms)
+    DigiKeyboard.sendKeyStroke(KEY_F, MOD_ALT_LEFT); //ALT + F to open file menu
+    DigiKeyboard.delay(200);    // Wait fifth of a second 200ms)
+    DigiKeyboard.sendKeyStroke(KEY_B); //B for the Set as Background option
+    DigiKeyboard.delay(500);    // Wait half a second (500ms)
+    
+    DigiKeyboard.sendKeyStroke(KEY_L, MOD_GUI_LEFT); //Lock the computer now we're finished
+
+    for (;;)
+    {
+        // Unused infinite loop
+    }
+
+}
